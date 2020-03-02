@@ -31,3 +31,9 @@ SELECT AVG(prod_price) AS avg_price
 SELECT AVG(prod_price) AS avg_price
 	FROM Products
 	WHERE vend_id = 'DLL01';
+
+SELECT COUNT(*) AS num_cust
+	FROM Customers;
+    
+SELECT COUNT(cust_email) AS num_cust
+	FROM Customers;
