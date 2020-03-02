@@ -24,3 +24,10 @@ where region = 'Western Europe'
 and population < 80000000
 and surfacearea > 100
 order by code desc;
+
+SELECT AVG(prod_price) AS avg_price
+	FROM Products;
+
+SELECT AVG(prod_price) AS avg_price
+	FROM Products
+	WHERE vend_id = 'DLL01';
