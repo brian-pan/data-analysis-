@@ -66,3 +66,16 @@ SELECT COUNT(distinct vend_id) FROM products;
 	-- 1. number of records
     -- 2. Null values
     -- 3. Duplicated values
+    
+    SELECT count(*), COUNT(vend_id), 
+COUNT(distinct vend_id)
+	FROM products;
+    
+    
+select distinct vend_id, prod_price from products;
+
+SELECT COUNT(*) AS num_items,
+	MIN(prod_price) AS price_min,
+	MAX(prod_price) AS price_max,
+	AVG(prod_price) AS price_avg
+	FROM Products;
