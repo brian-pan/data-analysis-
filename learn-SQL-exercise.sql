@@ -44,3 +44,14 @@ SELECT count(*), COUNT(cust_email)
     
 SELECT MAX(prod_price) AS max_price
 	FROM Products;
+
+SELECT MIN(prod_price) AS min_price
+	FROM Products;
+
+SELECT SUM(quantity) AS items_ordered
+	FROM OrderItems
+	WHERE order_num = 20005;
+
+SELECT SUM(item_price*quantity) AS total_sales
+	FROM OrderItems
+	WHERE order_num = 20005;
