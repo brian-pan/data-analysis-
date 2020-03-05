@@ -37,3 +37,10 @@ SELECT COUNT(*) AS num_cust
     
 SELECT COUNT(cust_email) AS num_cust
 	FROM Customers;
+    
+select * from  Customers; 
+SELECT count(*), COUNT(cust_email)
+	FROM Customers;
+    
+SELECT MAX(prod_price) AS max_price
+	FROM Products;
