@@ -55,3 +55,14 @@ SELECT SUM(quantity) AS items_ordered
 SELECT SUM(item_price*quantity) AS total_sales
 	FROM OrderItems
 	WHERE order_num = 20005;
+    
+    SELECT AVG(DISTINCT prod_price) AS avg_price
+	FROM Products
+	WHERE vend_id = 'DLL01';
+    
+SELECT COUNT(distinct vend_id) FROM products;
+
+-- is used very often in real business cases to check:
+	-- 1. number of records
+    -- 2. Null values
+    -- 3. Duplicated values
