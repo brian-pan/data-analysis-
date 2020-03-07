@@ -79,3 +79,14 @@ SELECT COUNT(*) AS num_items,
 	MAX(prod_price) AS price_max,
 	AVG(prod_price) AS price_avg
 	FROM Products;
+    
+    SELECT vend_id, COUNT(*) AS num_prods
+	FROM Products
+	GROUP BY vend_id
+    ORDER by num_prods;
+    
+SELECT vend_id, 
+count(*) as num_prods, 
+avg(prod_price) as avg_price
+		FROM Products
+        Group By vend_id;
