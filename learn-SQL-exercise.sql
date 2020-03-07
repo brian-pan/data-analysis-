@@ -106,3 +106,33 @@ SELECT cust_id, COUNT(*) AS orders
 	FROM Orders
 	GROUP BY cust_id
 	HAVING orders >= 2;
+    
+    SELECT vend_id, COUNT(*) AS num_prods
+	FROM Products
+	WHERE prod_price >= 4
+	GROUP BY vend_id
+	HAVING COUNT(*) >= 2
+    order by num_prods;
+    
+
+
+SELECT order_num
+FROM OrderItems
+WHERE prod_id = 'RGAN01';
+
+SELECT cust_id
+FROM Orders
+WHERE order_num IN (20007,20008);
+
+SELECT cust_name, cust_contact
+FROM Customers
+WHERE cust_id IN ('1000000004','1000000005');
+
+SELECT cust_name, cust_contact
+	FROM Customers
+	WHERE cust_id IN 
+    (SELECT cust_id
+				FROM Orders
+				WHERE order_num IN 
+                (SELECT order_num FROM OrderItems
+									WHERE prod_id = 'RGAN01'));
