@@ -90,3 +90,19 @@ count(*) as num_prods,
 avg(prod_price) as avg_price
 		FROM Products
         Group By vend_id;
+        
+        SELECT vend_id, prod_id, 
+COUNT(*) AS num_prods	
+FROM Products	
+GROUP BY vend_id, prod_id;
+
+SELECT order_num,prod_id, 
+sum(quantity)
+FROM orderitems
+GROUP BY 1,2;
+
+    
+SELECT cust_id, COUNT(*) AS orders
+	FROM Orders
+	GROUP BY cust_id
+	HAVING orders >= 2;
