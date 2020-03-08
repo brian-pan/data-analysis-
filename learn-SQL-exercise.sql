@@ -74,8 +74,21 @@ prod_id, quantity, item_price
 	FROM OrderItems
 	WHERE order_num = 20008;
 
+-- functions:
+SELECT vend_name, 
+upper(vend_name) AS vend_name_upcase
+	FROM Vendors
+	ORDER BY vend_name;
 
+SELECT vend_name, 
+substring(vend_name,1,4) 
+AS first_4_letters_of_vend_name
+	FROM Vendors
+	ORDER BY vend_name;
 
+select substring(order_date, 1,7) as month1,
+substring(order_date,6,2) as month2
+from Orders;
 
 
 
