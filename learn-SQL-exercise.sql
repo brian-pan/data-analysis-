@@ -90,6 +90,19 @@ select substring(order_date, 1,7) as month1,
 substring(order_date,6,2) as month2
 from Orders;
 
+SELECT order_num, order_date
+	FROM Orders
+	WHERE YEAR(order_date) = 2012;
+
+SELECT order_num, order_date, NOW() as currentdateandtime
+	FROM Orders;
+    
+SELECT order_num, order_date,
+NOW() as currentdateandtime, curdate() as curdt,
+datediff(curdate(), order_date) as dategap
+	FROM Orders;    
+
+
 
 
 
