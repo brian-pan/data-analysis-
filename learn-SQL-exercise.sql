@@ -102,7 +102,18 @@ NOW() as currentdateandtime, curdate() as curdt,
 datediff(curdate(), order_date) as dategap
 	FROM Orders;    
 
+SELECT prod_price,
+case when prod_price < 6 then 'low price'
+	 else 'high price' end as price_seg
+     from Products;
 
+-- use case when to create a segmentation column
+SELECT prod_price,
+case when prod_price < 6 then 'low price'
+	 when prod_price < 9 then 'medium price'
+	 else 'high price' 
+     end as price_segment
+     from products;
 
 
 
