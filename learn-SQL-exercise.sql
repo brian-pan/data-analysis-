@@ -37,6 +37,24 @@ SELECT prod_name, prod_price,vend_id
 	FROM Products
 	WHERE vend_id IN ('DLL01','BRS01');
 
+SELECT prod_id, prod_name
+	FROM Products
+	WHERE prod_name LIKE 'Fish%';
+
+SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE '%bean bag%';
+
+SELECT prod_id, prod_name
+	FROM Products
+	WHERE prod_name LIKE '__inch teddy bear';
+    
+SELECT prod_id, prod_name
+FROM Products
+WHERE prod_name LIKE '% inch teddy bear';
+
+
+
 
 
 
