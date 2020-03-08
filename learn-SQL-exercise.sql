@@ -65,6 +65,18 @@ as vend_title
 	FROM Vendors
 	ORDER BY vend_name;
 
+SELECT *, concat(vend_name, '(' , vend_zip, ')')  as vend_detail
+FROM Vendors
+ORDER BY vend_name;
+
+SELECT quantity*item_price AS total_sales,
+prod_id, quantity, item_price
+	FROM OrderItems
+	WHERE order_num = 20008;
+
+
+
+
 
 
 
