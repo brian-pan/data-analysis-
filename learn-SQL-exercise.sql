@@ -53,11 +53,22 @@ SELECT prod_id, prod_name
 FROM Products
 WHERE prod_name LIKE '% inch teddy bear';
 
+-- calculated fields
+SELECT vend_name, vend_country, 
+Concat(vend_name, ' (', vend_country, ')')
+	FROM Vendors
+	ORDER BY vend_name;
+
+SELECT vend_name, vend_country, 
+Concat(vend_name, ' (', vend_country, ')') 
+as vend_title
+	FROM Vendors
+	ORDER BY vend_name;
 
 
 
 
-
+# Cls3
 SELECT AVG(prod_price) AS avg_price
 	FROM Products;
 
