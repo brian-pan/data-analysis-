@@ -229,3 +229,16 @@ SELECT cust_name, cust_contact
 				WHERE order_num IN 
                 (SELECT order_num FROM OrderItems
 									WHERE prod_id = 'RGAN01'));
+
+-- 3.1
+select continent, sum(population) as sum_pol, avg(lifeexpectancy) as avg_lf 
+from country group by 1
+having sum_pol >= 1000000;
+
+-- 3.2
+select case when population < 1000000 then 'small'
+	when population < 10000000 then 'medium'
+    when population < 100000000 then 'large'
+    when population >= 100000000 then 'extra large' end as population_size, 
+    avg(LifeExpectancy)
+    from country group by 1;
