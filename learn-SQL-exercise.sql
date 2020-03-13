@@ -251,3 +251,33 @@ from countrylanguage group by 1 order by 2 desc;
 select region, avg(population) as pol_avg from country
 group by 1
 having pol_avg > (select avg(population) from country);
+
+
+
+# Cls4
+SELECT *
+	FROM Vendors JOIN Products
+	ON Vendors.vend_id = Products.vend_id;
+    
+SELECT vend_name, prod_name, prod_price
+	FROM Vendors JOIN Products
+	ON Vendors.vend_id = Products.vend_id;
+    
+SELECT order_num, prod_name, vend_name, prod_price, quantity
+	FROM OrderItems, Products, Vendors
+	WHERE Products.vend_id = Vendors.vend_id
+	AND OrderItems.prod_id = Products.prod_id
+	AND order_num = 20007;
+
+
+SELECT cust_name, cust_contact
+	FROM Customers, Orders, OrderItems
+	WHERE Customers.cust_id = Orders.cust_id
+	AND OrderItems.order_num = Orders.order_num
+	AND prod_id = 'RGAN01';
+
+SELECT o.*,cust_name,cust_contact
+	FROM Customers AS C, Orders AS O, OrderItems AS OI
+	WHERE C.cust_id = O.cust_id
+	AND OI.order_num = O.order_num
+	AND prod_id = 'RGAN01';
