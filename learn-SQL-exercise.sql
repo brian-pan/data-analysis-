@@ -298,3 +298,23 @@ LEFT JOIN
 orders as O
 on C.cust_id=O.cust_id;
 
+SELECT C.cust_id, O.order_num
+FROM customers as C
+RIGHT JOIN
+orders as O
+on C.cust_id=O.cust_id;
+
+SELECT c.cust_id,cust_name, cust_contact
+	FROM Customers AS C
+    LEFT JOIN Orders AS O
+    ON C.cust_id = O.cust_id
+    LEFT JOIN OrderItems AS OI
+    ON OI.order_num = O.order_num
+    where prod_id = 'RGAN01';
+
+SELECT Customers.cust_id, COUNT(Orders.order_num) AS num_ord -- be careful about count(*)
+FROM Customers INNER JOIN Orders
+ ON Customers.cust_id = Orders.cust_id
+GROUP BY Customers.cust_id;
+
+
