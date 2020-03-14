@@ -325,3 +325,23 @@ GROUP BY Customers.cust_id;
 SELECT Customers.cust_id, Orders.order_num AS num_ord
 FROM Customers LEFT OUTER JOIN Orders
  ON Customers.cust_id = Orders.cust_id;
+
+-- union
+select cust_name, cust_contact, cust_email from customers
+where cust_state in ('IL', 'IN','MI')
+UNION
+select cust_name, cust_contact, cust_email from customers#customers2
+where cust_name = 'Fun4All';
+
+select cust_name, cust_contact, cust_email from customers
+where cust_state in ('IL', 'IN','MI')
+UNION ALL
+select cust_name, cust_contact, cust_email from customers
+where cust_name = 'Fun4All';
+
+select cust_name, cust_contact, cust_email from customers 
+where cust_state in ('IL', 'IN','MI')
+UNION ALL
+select cust_name, cust_contact, cust_email from customers
+where cust_name = 'Fun4All'
+order by cust_name,cust_contact;
