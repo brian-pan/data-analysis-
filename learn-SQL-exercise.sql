@@ -378,3 +378,21 @@ values(
 'USA',
 NULL,
 NULL);
+
+insert into customers
+(cust_id,
+cust_name,
+cust_address,cust_city,
+cust_state,
+cust_zip,
+cust_country,
+cust_contact,cust_email)
+select
+cust_id,
+cust_name,
+cust_address,cust_city,
+cust_state,
+cust_zip,
+cust_country,
+cust_contact,cust_email
+from CustNew;
