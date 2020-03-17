@@ -396,3 +396,11 @@ cust_zip,
 cust_country,
 cust_contact,cust_email
 from CustNew;
+
+select * from customers where cust_id = '1000000005';
+
+select * from Customers;
+
+UPDATE Customers 
+SET cust_email = 'abcd@gmail.com'
+WHERE cust_id = '1000000005';
