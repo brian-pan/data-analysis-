@@ -404,3 +404,8 @@ select * from Customers;
 UPDATE Customers 
 SET cust_email = 'abcd@gmail.com'
 WHERE cust_id = '1000000005';
+
+UPDATE Customers 
+SET cust_email = 'abc@gmail.com',
+	cust_contact = 'learnsqlcourse'
+WHERE cust_id = '1000000005';
