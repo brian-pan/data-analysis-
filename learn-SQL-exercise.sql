@@ -409,3 +409,10 @@ UPDATE Customers
 SET cust_email = 'abc@gmail.com',
 	cust_contact = 'learnsqlcourse'
 WHERE cust_id = '1000000005';
+
+select * from Customers;
+
+DELETE FROM Customers
+WHERE cust_id = 'Toy Land2';
+
+select * from Customers; 
