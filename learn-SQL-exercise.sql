@@ -422,3 +422,12 @@ WHERE cust_id = 'Toy Land2';
 
 select * from Customers; 
 
+# Create Table
+CREATE TABLE new_customers AS
+SELECT C.cust_id,cust_name, cust_contact
+	FROM Customers AS C
+    LEFT JOIN Orders AS O
+    ON C.cust_id = O.cust_id
+    LEFT JOIN OrderIteNataliems AS OI
+    ON OI.order_num = O.order_num
+    where prod_id = 'RGAN01';
