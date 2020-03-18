@@ -438,3 +438,11 @@ select * from new_customers;
 delete from new_customers;
 
 drop table if exists new_customers; # with if statement
+
+# create table and drop
+CREATE TABLE class.new_c AS
+SELECT * FROM Customers;
+
+DROP TABLE class.new_c;
+
+DROP TABLE IF EXISTS new_c;
