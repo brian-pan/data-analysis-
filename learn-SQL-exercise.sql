@@ -416,3 +416,9 @@ DELETE FROM Customers
 WHERE cust_id = 'Toy Land2';
 
 select * from Customers; 
+
+DELETE FROM Customers
+WHERE cust_id = 'Toy Land2';
+
+select * from Customers; 
+
