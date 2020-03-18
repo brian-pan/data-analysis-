@@ -431,3 +431,10 @@ SELECT C.cust_id,cust_name, cust_contact
     LEFT JOIN OrderIteNataliems AS OI
     ON OI.order_num = O.order_num
     where prod_id = 'RGAN01';
+    
+select * from new_customers;
+# different b/t delete and drop:
+
+delete from new_customers;
+
+drop table if exists new_customers; # with if statement
