@@ -446,3 +446,10 @@ SELECT * FROM Customers;
 DROP TABLE class.new_c;
 
 DROP TABLE IF EXISTS new_c;
+
+SELECT vend_id, 
+COUNT(*) AS num_prods	
+FROM Products				
+WHERE prod_price >= 4
+			GROUP BY vend_id   
+			order by num_prods;
