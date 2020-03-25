@@ -453,3 +453,11 @@ FROM Products
 WHERE prod_price >= 4
 			GROUP BY vend_id   
 			order by num_prods;
+            
+create table a as
+SELECT vend_id, COUNT(*) AS num_prods
+	FROM Products
+	WHERE prod_price >= 4
+	GROUP BY vend_id
+    order by num_prods;
+    
