@@ -481,3 +481,10 @@ FROM Orders;
 select cust_id, order_date, order_num from
 (SELECT *, 
 ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY order_date desc) AS row_num 
+FROM Orders) as t
+where t.row_num=1;
+
+SELECT cust_id, 
+order_date, 
+ROW_NUMBER() OVER (PARTITION BY cust_id, order_date ORDER BY order_date desc) AS row_num 
+FROM Orders;
