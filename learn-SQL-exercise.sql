@@ -476,3 +476,8 @@ SELECT cust_id,
 order_date, 
 ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY order_date desc) AS row_num 
 FROM Orders;
+
+
+select cust_id, order_date, order_num from
+(SELECT *, 
+ROW_NUMBER() OVER (PARTITION BY cust_id ORDER BY order_date desc) AS row_num 
