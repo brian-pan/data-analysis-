@@ -461,3 +461,13 @@ SELECT vend_id, COUNT(*) AS num_prods
 	GROUP BY vend_id
     order by num_prods;
     
+SELECT a.vend_id, b.vend_city  FROM 
+(SELECT vend_id, COUNT(*) AS num_prods
+	FROM Products
+	WHERE prod_price >= 4
+	GROUP BY vend_id
+    Having num_prods >=2
+    order by num_prods) AS a
+    left join
+Vendors as b
+on a.vend_id=b.vend_id;
